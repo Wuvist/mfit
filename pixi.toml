@@ -9,3 +9,9 @@ version = "0.1.0"
 
 [dependencies]
 python = "3.12.*"
+opencv = ">=4.10.0"
+numpy = ">=1.26.0"
+pip = "*"
+
+[pypi-dependencies]
+mediapipe = ">=0.10.0"
