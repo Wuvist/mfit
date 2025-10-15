@@ -1,4 +1,29 @@
 # pixi environments
 .pixi/*
 !.pixi/config.toml
-__pycache__
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output files
+measurements_*.txt
+*_annotated.jpg
+*_annotated.png

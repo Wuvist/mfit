@@ -6,6 +6,8 @@ platforms = ["osx-arm64"]
 version = "0.1.0"
 
 [tasks]
+run = "python main.py"
+test = "python test_calculator.py"
 
 [dependencies]
 python = "3.12.*"
