@@ -84,7 +84,7 @@ def get_landmarks(image_path: str) -> Dict[str, Tuple[float, float]]:
 
 
 def visualize_landmarks(image_path: str, landmarks: Dict[str, Tuple[float, float]],
-                        output_path: Optional[str] = None) -> np.ndarray:
+                        output_path: Optional[str] = None, show_landmark_label: bool = False) -> np.ndarray:
     """
     Draw detected landmarks on the image for visualization.
 
@@ -92,6 +92,7 @@ def visualize_landmarks(image_path: str, landmarks: Dict[str, Tuple[float, float
         image_path: Path to the original image
         landmarks: Dictionary of landmark coordinates from get_landmarks()
         output_path: Optional path to save the annotated image
+        show_landmark_label: If True, display landmark names on the image
 
     Returns:
         Annotated image as numpy array
@@ -104,6 +105,11 @@ def visualize_landmarks(image_path: str, landmarks: Dict[str, Tuple[float, float
     # Draw landmarks
     for landmark_name, (x, y) in landmarks.items():
         cv2.circle(image, (int(x), int(y)), 5, (0, 255, 0), -1)
+
+        # Draw landmark label if requested
+        if show_landmark_label:
+            cv2.putText(image, landmark_name, (int(x) + 10, int(y) - 10),
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.3, (0, 255, 0), 1, cv2.LINE_AA)
 
     # Save if output path provided
     if output_path:
