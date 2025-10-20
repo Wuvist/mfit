@@ -275,12 +275,6 @@ def display_measurements(measurements: dict):
     print(f"│ Right Thigh Circumference:    {measurements['right_thigh_circumference']:6.1f} cm" + " " * 26 + "│")
     print("└" + "─" * 78 + "┘")
 
-    # Disclaimer
-    print("\n" + "!" * 80)
-    print("DISCLAIMER:".center(80))
-    print("These measurements are estimates. Accuracy depends on photo quality.".center(80))
-    print("For best results, follow all guidelines carefully.".center(80))
-    print("!" * 80)
 
 
 def format_measurements_for_file(measurements: dict) -> str:
